@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { MyContext } from '@/Context/AuthContext';
 import Link from 'next/link';
 import { api } from '@/lib/config/configure';
+import Cookies from 'js-cookie';
 
 const Login = () => {
 
@@ -32,10 +33,8 @@ const Login = () => {
         toast.success('Login successfull')
         dispatch({ type: "ADD_USER", payload: responce.data.user });
         console.log(responce.data.jwt , 'jwt jwt');
-        if(typeof window !== 'undefined'){
-          console.log('Entered');
-        localStorage.setItem('MyToken', JSON.stringify(responce.data.jwt))
-        }
+        Cookies.set("MyToken", responce.data.jwt, { expires: 7 });
+        // localStorage.setItem('MyToken', JSON.stringify(responce.data.jwt))
         navigate.push('/')
       }
     } catch (error) {

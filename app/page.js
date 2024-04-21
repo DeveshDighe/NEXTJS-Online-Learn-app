@@ -6,6 +6,7 @@ import { MyContext } from "@/Context/AuthContext";
 import HomeContainer from "@/components/UserComp/HomeContainer";
 import Navbar from '@/components/UserComp/Navbar'; // Update import statement to use consistent casing
 import axios from "axios";
+import Cookies from "js-cookie";
 
 
 
@@ -16,7 +17,7 @@ export default function Home() {
 
   const getUserData = async () => {
     try {
-      const jwtData = localStorage.getItem('MyToken');
+      const jwtData = Cookies.get("MyToken");
   
       if (!jwtData) {
         console.error('JWT token not found in local storage');

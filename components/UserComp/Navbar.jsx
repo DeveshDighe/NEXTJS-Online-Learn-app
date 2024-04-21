@@ -5,6 +5,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation';
 import { MyContext } from '@/Context/AuthContext'
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -15,9 +16,10 @@ export default function Navbar() {
   const { state, dispatch } = useContext(MyContext)
 
 
-  const getUserData = async () => {
+  const getUserData = async (jwtData) => {
     try {
-      const jwtData = localStorage.getItem('MyToken');
+      
+      console.log(jwtData);
   
       if (!jwtData) {
         console.error('JWT token not found in local storage');
@@ -38,7 +40,11 @@ export default function Navbar() {
   
 
   useEffect(() => {
-    getUserData();
+    const jwtData = Cookies.get("MyToken");
+    if (jwtData) {
+      getUserData(jwtData);
+      
+    }
   }, [])
 
   const navigate = useRouter()

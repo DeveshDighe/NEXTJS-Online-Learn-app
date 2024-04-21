@@ -34,13 +34,13 @@ const Footer = () => {
 
         <div className="flex justify-center space-x-5">
           <Link href="https://www.linkedin.com/in/deveshdighe" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.icons8.com/fluent/30/000000/linkedin-2.png" />
+            <img src="https://img.icons8.com/fluent/30/000000/linkedin-2.png" alt='linkedIn' />
           </Link>
           <Link href="https://www.instagram.com/im___deveshhh?igsh=MTMwHR2Ym01NXhmaA==" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.icons8.com/fluent/30/000000/instagram-new.png" />
+            <img src="https://img.icons8.com/fluent/30/000000/instagram-new.png" alt='insta' />
           </Link>
           <Link href="https://github.com/DeveshDighe" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.icons8.com/fluent/30/000000/github.png" />
+            <img src="https://img.icons8.com/fluent/30/000000/github.png" alt='github' />
           </Link>
           <Link href="https://twitter.com/devesh_dighe" target="_blank" rel="noopener noreferrer">
             <img src="https://img.icons8.com/fluent/30/000000/twitter.png" alt="Twitter" />

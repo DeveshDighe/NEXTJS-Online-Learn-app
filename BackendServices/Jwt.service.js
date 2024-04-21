@@ -21,7 +21,7 @@ const getUserIdFromToken = async (token) => {
     let tokenDest = token.jwt
     console.log("This is token" , tokenDest);
       // console.log('Secret key:', process.env.SECRET_KEYY);
-      let splicedToken = tokenDest.slice(1, tokenDest.length-1)
+      let splicedToken = tokenDest
       console.log(splicedToken, 'splicedToeken');
       console.log('Received token:', token);
       const decodedToken = await jwt.verify(splicedToken, process.env.SECRET_KEYY);
