@@ -2,9 +2,9 @@
 
 import React, { useRef } from 'react';
 import {toast} from 'react-hot-toast'
-import { api } from '@/lib/config/configure';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import axios from 'axios';
 
 
 const Register = () => {
@@ -31,7 +31,7 @@ const Register = () => {
     let registerData = { name, email, password, confirmPassword }
 
     try {
-      const responce = await api.post('/api/auth/signup', registerData)
+      const responce = await axios.post('/api/auth/signup', registerData)
       console.log(responce, 'This is my responce');
       if (responce.data.success) {
         toast.success(responce.data.message)

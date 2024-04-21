@@ -5,8 +5,8 @@ import toast from 'react-hot-toast'
 import { useRouter } from 'next/navigation';
 import { MyContext } from '@/Context/AuthContext';
 import Link from 'next/link';
-import { api } from '@/lib/config/configure';
 import Cookies from 'js-cookie';
+import axios from 'axios';
 
 const Login = () => {
 
@@ -27,7 +27,7 @@ const Login = () => {
 
     try {
       console.log(userLoginData, 'userLoginData');
-      const responce = await api.post('/api/auth/signin', userLoginData)
+      const responce = await axios.post('/api/auth/signin', userLoginData)
       if (responce.data.success) {
         console.log(responce.data, 'data.user');
         toast.success('Login successfull')
