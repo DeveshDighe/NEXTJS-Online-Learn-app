@@ -32,7 +32,10 @@ const Login = () => {
         toast.success('Login successfull')
         dispatch({ type: "ADD_USER", payload: responce.data.user });
         console.log(responce.data.jwt , 'jwt jwt');
+        if(typeof window !== 'undefined'){
+          console.log('Entered');
         localStorage.setItem('MyToken', JSON.stringify(responce.data.jwt))
+        }
         navigate.push('/')
       }
     } catch (error) {
