@@ -1,6 +1,6 @@
 "use client"
 
-import Image from "next/image";
+
 import { useContext, useEffect } from "react";
 import { MyContext } from "@/Context/AuthContext";
 import HomeContainer from "@/components/UserComp/HomeContainer";

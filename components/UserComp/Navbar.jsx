@@ -4,7 +4,6 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation';
 import { MyContext } from '@/Context/AuthContext'
-import Link from 'next/link';
 import axios from 'axios';
 
 function classNames(...classes) {

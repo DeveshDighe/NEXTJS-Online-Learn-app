@@ -1,11 +1,9 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-
 import RotateLoader from "react-spinners/RotateLoader.js";
 import Navbar from '@/components/UserComp/Navbar';
 import Footer from '@/components/UserComp/Footer';
-import axios from 'axios';
 import { api } from '@/lib/config/configure';
 
 

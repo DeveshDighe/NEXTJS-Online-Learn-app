@@ -1,6 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { MdDelete } from "react-icons/md";
-// import { api } from '../../../Configer/configure';
 import toast from 'react-hot-toast'
 import Navbar from '../../UserComp/NavBar';
 import { useNavigate } from 'react-router-dom'

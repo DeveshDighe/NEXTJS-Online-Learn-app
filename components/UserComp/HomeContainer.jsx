@@ -2,7 +2,6 @@
 
 import React, { useContext, useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import Navbar from './NavBar.jsx'
 import Footer from './Footer.jsx'
 import RotateLoader from "react-spinners/RotateLoader.js";
 import axios from 'axios'

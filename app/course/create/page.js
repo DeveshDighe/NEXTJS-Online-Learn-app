@@ -3,10 +3,7 @@
 
 import Navbar from '@/components/UserComp/Navbar';
 import React, { useEffect, useRef, useState } from 'react';
-
-// import { api } from '../../../Configer/configure';
 import toast from 'react-hot-toast'
-
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 

@@ -5,7 +5,6 @@ import toast from 'react-hot-toast'
 import { useRouter } from 'next/navigation';
 import { MyContext } from '@/Context/AuthContext';
 import Link from 'next/link';
-import axios from 'axios';
 import { api } from '@/lib/config/configure';
 
 const Login = () => {
