@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import RotateLoader from "react-spinners/RotateLoader.js";
 import Navbar from '@/components/UserComp/Navbar';
 import Footer from '@/components/UserComp/Footer';
-import axios from 'axios';
+import { api } from '@/lib/config/configure';
 
 
 const Lectures = () => {
@@ -13,7 +13,7 @@ const Lectures = () => {
 
   const getAllLectures = async () => {
     try {
-      const response = await axios.get('/api/users/getUserlectures');
+      const response = await api.get('/api/users/getUserlectures');
       if (response.data.success) {
         console.log(response.data.lectures.lectures, 'response.data.lectures');
         setLectures(response.data.lectures.lectures); // Ensure lectures is an array
