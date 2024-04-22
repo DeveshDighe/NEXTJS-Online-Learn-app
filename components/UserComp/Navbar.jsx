@@ -99,10 +99,10 @@ export default function Navbar() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <img
-                    className="h-8 w-auto"
-                    src="https://www.freeiconspng.com/thumbs/yellow-lightning-png/yellow-lightning-bolt-clipart-30.png"
-                    alt="Logo"
+                <img
+                    className="h-8 w-auto rounded-3xl"
+                    src="https://media.istockphoto.com/id/1212437517/vector/lightning-bolt-thunder-bolt-lighting-strike-expertise-flat-vector-icon.jpg?s=612x612&w=0&k=20&c=Pc3HyHPRWeBxzB_bvjDZiQ3vWuRoNwPqmVdMhCxT2ts="
+                    alt="Your Company"
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
