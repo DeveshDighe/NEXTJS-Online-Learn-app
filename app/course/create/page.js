@@ -32,7 +32,6 @@ const CreateCourse = () => {
 
       if (response.data.success) {
         setallUsersData(response.data.allUserData)
-        console.log(response.data.allUserData , 'response.data.allUserData');
       }
     } catch (error) {
       console.error(error)
@@ -68,11 +67,9 @@ const CreateCourse = () => {
       LecturesData: lectures,
       CourseDuration: courseDuration
     };
-    console.log(AllInputVal, 'AllInputField');
 
     try {
       const response = await axios.post('/api/course/create', AllInputVal);
-      console.log(response, 'response');
       if (response.data.success) {
         toast.success('Course is created')
         navigate.push('/')

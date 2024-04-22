@@ -17,7 +17,6 @@ const HomeContainer = () => {
   const getAllCourseData = async () => {
     try {
       const response = await axios.get('/api/course')
-      console.log(response.data, 'This is a response data');
       if (response.data.success) {
         setallData(response.data.allCoursesData)
       }

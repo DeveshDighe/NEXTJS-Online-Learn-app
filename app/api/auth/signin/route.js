@@ -12,7 +12,7 @@ export async function POST(req){
   try {
     connectDB()
       const { password, email } = await req.json();
-      console.log(password, email);
+
 
       const user = await findUserbyEmail(email)
 
@@ -27,11 +27,11 @@ export async function POST(req){
 
       const jwt = await generateToken(user._id)
 
-      console.log(jwt, 'jwejejejejejejejejeje');
+
 
       return NextResponse.json({ jwt, message: 'login success', success: true , user}, {status : 200})
   } catch (error) {
-    console.log('This is error',error);
+
       return NextResponse.json({ error: error.message }, {status : 500})
   }
 }

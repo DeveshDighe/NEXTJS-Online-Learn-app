@@ -3,11 +3,10 @@ import { NextResponse } from "next/server";
 
 
 export async function POST(req) {
-  console.log('aya kya yaha');
+
   const userData =await req.json()
   try {
       const user = await createUser(userData);
-      console.log(user , 'useruser');
 
       if (user.error) {
           return NextResponse.json({ error: user.error } , {status : 400});

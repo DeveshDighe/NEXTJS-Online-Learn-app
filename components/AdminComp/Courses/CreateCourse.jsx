@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import toast from 'react-hot-toast'
 import Navbar from '../../UserComp/NavBar';
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/navigation';
 
 const CreateCourse = () => {
   const CourseName = useRef('');
@@ -20,7 +20,7 @@ const CreateCourse = () => {
     setLectures([...lectures, { date: '', time: '', lecturer: '' }]);
   };
 
-  const navigate = useNavigate()
+  const navigate = useRouter()
 
   const fetchAllUsers =async () => {
     try {
@@ -28,7 +28,6 @@ const CreateCourse = () => {
 
       if (response.data.success) {
         setallUsersData(response.data.allUserData)
-        console.log(response.data.allUserData , 'response.data.allUserData');
       }
     } catch (error) {
       console.error(error)
@@ -64,14 +63,12 @@ const CreateCourse = () => {
       LecturesData: lectures,
       CourseDuration: courseDuration
     };
-    console.log(AllInputVal, 'AllInputField');
 
     try {
       const response = await api.post('/api/course/create', AllInputVal);
-      console.log(response, 'response');
       if (response.data.success) {
         toast.success('Course is created')
-        navigate('/')
+        navigate.push('/')
       }
     } catch (error) {
       console.error(error);

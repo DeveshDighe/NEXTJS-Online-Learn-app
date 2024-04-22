@@ -18,7 +18,6 @@ const SingleCoursePage = () => {
   const {state , dispatch} = useContext(MyContext)
   
   const { id } = useParams();
-  console.log('Id', id);
   const navigate = useRouter()
 
   const removeLecture = (indexToRemove) => {
@@ -34,14 +33,12 @@ const SingleCoursePage = () => {
 
   const createLecture = async (e) => {
     try {
-      console.log('tatatat');
       const response = await axios.post(`/api/course/addLectures/${id}`, lectures);
       if (response?.data?.success) {
         toast.success(response.data.message);
         navigate.push('/')
       }
     } catch (error) {
-      console.log(error, 'errrrr');
       toast.error(error?.response?.data?.message);
     }
   };
@@ -51,7 +48,6 @@ const SingleCoursePage = () => {
       const response = await axios.get('/api/users/getAllUser');
       if (response.data.success) {
         setallUsersData(response.data.allUserData);
-        console.log(response.data.allUserData, 'response.data.allUserData');
       }
     } catch (error) {
       console.error(error);
@@ -60,14 +56,11 @@ const SingleCoursePage = () => {
 
   const requestSingleData = async () => {
     try {
-      console.log('Is it requsting or not');
       const response = await axios.get(`/api/course/single_course/${id}`);
       if (response.data.success) {
-        console.log(response.data.singleCourse, 'afafafafafafaffafaff');
         setsingelCourseData(response.data.singleCourse);
       }
     } catch (error) {
-      console.log(error);
     }
   };
 
@@ -94,7 +87,7 @@ const SingleCoursePage = () => {
     }
   }, [id]);
 
-  console.log(lectures.length  , 'allluserseData');
+
 
   return (
     <div className="">

@@ -13,7 +13,7 @@ import Cookies from "js-cookie";
 export default function Home() {
 
   const {state , dispatch} = useContext(MyContext)
-  console.log('Hit hua home');
+
 
   const getUserData = async () => {
     try {
@@ -27,7 +27,7 @@ export default function Home() {
       const response = await axios.post('/api/auth/getUserProfile', { jwt: jwtData });
       if (response.data.success) {
         dispatch({type : 'ADD_USER' , payload : response.data.user})
-        console.log('This is response', response.data);
+
       }
   
       // Handle response data if needed

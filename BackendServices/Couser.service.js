@@ -6,9 +6,8 @@ import User from "@/lib/config/models/user.model";
 
 const createCourseData = async (userData) => {
   try {
-    console.log('Starting course data creation...');
     const { CourseName, CourseLevel, CourseDescription, CourseImgURL, CourseDuration } = userData;
-    console.log({ CourseName, CourseLevel, CourseDescription, CourseImgURL, CourseDuration } , '{ CourseName, CourseLevel, CourseDescription, CourseImgURL, CourseDuration }');
+    // console.log({ CourseName, CourseLevel, CourseDescription, CourseImgURL, CourseDuration } , '{ CourseName, CourseLevel, CourseDescription, CourseImgURL, CourseDuration }');
 
     const createdCourse = new Course({
       CourseName,
@@ -20,7 +19,6 @@ const createCourseData = async (userData) => {
 
     // Save the course to the database
     const course = await createdCourse.save();
-    console.log('Course created successfully:', course);
     return course;
   } catch (error) {
     console.error('Error creating course data:', error);
@@ -29,17 +27,14 @@ const createCourseData = async (userData) => {
 };
 
 const getAllCoursesService =async () => {
-  console.log('aya kya');
+
   try {
     const allCoursesData = await Course.find().populate('lectures')
-    console.log(allCoursesData , 'allllds');
     
     if (allCoursesData) {
-      console.log(allCoursesData, 'aaaaaaaaaaaaaaaaaaaaa');
       return allCoursesData
     }
   } catch (error) {
-    console.log('This is error ', error);
     throw new Error(error)
   }
 }
@@ -49,11 +44,9 @@ const getSingleCourseService = async (id) => {
     const singleCourseData = await Course.findById(id).populate({
       path: 'lectures', populate: { path: 'lecturer' } // Populate the lecturer field inside the lectures array
     });
-    console.log(singleCourseData);
 
     
     
-    console.log(singleCourseData , 'siniininini');
     if (singleCourseData) {
       return singleCourseData
     }

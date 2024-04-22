@@ -15,7 +15,6 @@ const Lectures = () => {
     try {
       const response = await api.get('/api/users/getUserlectures');
       if (response.data.success) {
-        console.log(response.data.lectures.lectures, 'response.data.lectures');
         setLectures(response.data.lectures.lectures); // Ensure lectures is an array
       }
     } catch (error) {

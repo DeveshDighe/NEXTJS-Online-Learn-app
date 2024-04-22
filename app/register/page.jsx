@@ -32,14 +32,12 @@ const Register = () => {
 
     try {
       const responce = await axios.post('/api/auth/signup', registerData)
-      console.log(responce, 'This is my responce');
       if (responce.data.success) {
         toast.success(responce.data.message)
         navigate.push('/login')
       }
     } catch (error) {
       toast.error(error.response.data.error)
-      console.log(error, 'rersrserserseresr');
     }
   };
 

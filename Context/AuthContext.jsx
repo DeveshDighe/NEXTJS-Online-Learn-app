@@ -8,11 +8,9 @@ const initialState = { user: null }
 const reducer = (state, action) => {
   switch (action.type) {
     case 'ADD_USER':
-      console.log('User added:', action.payload);
       return { ...state, user: action.payload };
 
     case 'REMOVE_USER':
-      console.log('User removed');
       return { ...state, user: null };
 
     default:

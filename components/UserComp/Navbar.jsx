@@ -19,7 +19,6 @@ export default function Navbar() {
   const getUserData = async (jwtData) => {
     try {
       
-      console.log(jwtData);
   
       if (!jwtData) {
         console.error('JWT token not found in local storage');
@@ -29,7 +28,6 @@ export default function Navbar() {
       const response = await axios.post('/api/auth/getUserProfile', { jwt: jwtData });
       if (response.data.success) {
         dispatch({type : 'ADD_USER' , payload : response.data.user})
-        console.log('This is response', response.data);
       }
   
       // Handle response data if needed
@@ -49,7 +47,6 @@ export default function Navbar() {
 
   const navigate = useRouter()
 
-  console.log(state?.user?.role, 'state?.user?.role');
 
   const navigation = [
     { name: 'My Lectures', href: '', current: false },
@@ -64,12 +61,10 @@ export default function Navbar() {
     if (name === 'My Lectures') {
       navigate.push('/user/my_lectures')
     } else if (name === 'Home') {
-      console.log('homemememem');
       navigate.push('/')
     } else if (name === 'Create Course') {
       navigate.push('/course/create')
     } else if (name === 'About Me') {
-      console.log('dsfsfsffsfsfsfsf');
       // Smooth scroll to the About section
       const element = document.getElementById('About Me')
       if (element) {
@@ -79,7 +74,8 @@ export default function Navbar() {
   }
 
   const handleLogout = () => {
-    localStorage.removeItem('MyToken')
+    Cookies.remove('MyToken')
+    // localStorage.removeItem('MyToken')
     dispatch({ type: 'REMOVE_USER' })
   }
 

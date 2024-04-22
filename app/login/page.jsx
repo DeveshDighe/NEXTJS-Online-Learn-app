@@ -26,13 +26,10 @@ const Login = () => {
     let userLoginData = { email, password }
 
     try {
-      console.log(userLoginData, 'userLoginData');
       const responce = await axios.post('/api/auth/signin', userLoginData)
       if (responce.data.success) {
-        console.log(responce.data, 'data.user');
         toast.success('Login successfull')
         dispatch({ type: "ADD_USER", payload: responce.data.user });
-        console.log(responce.data.jwt , 'jwt jwt');
         Cookies.set("MyToken", responce.data.jwt, { expires: 7 });
         // localStorage.setItem('MyToken', JSON.stringify(responce.data.jwt))
         navigate.push('/')

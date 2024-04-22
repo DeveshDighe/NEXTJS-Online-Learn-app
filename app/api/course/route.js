@@ -7,7 +7,6 @@ import { NextResponse } from "next/server";
 export async function GET(req){
   try {
     await connectDB()
-      console.log('This is getAllCorses controller');
   
       const allCoursesData = await getAllCoursesService()
       // console.log(allCoursesData , allCoursesData);

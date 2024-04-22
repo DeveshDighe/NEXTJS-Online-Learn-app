@@ -10,7 +10,6 @@ export async function GET(req){
 
     return NextResponse.json({message : 'All users fetched' , success : true , allUserData}, {status : 200})
   } catch (error) {
-    console.log(error ,'This is error');
     return NextResponse.json({message : 'error in fetching users' , success : false }, {status : 400})
   }
 }

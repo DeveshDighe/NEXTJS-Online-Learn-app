@@ -4,9 +4,7 @@ import Lecture from "@/lib/config/models/lectures.model";
 
 const getAllLectures = async  (id) => {
   try {
-    console.log(id , 'isisisisis');
     const newId =await id.toString()
-    console.log(newId, 'newId');
     const userWithLectures = await User.findById(newId)
     .populate({
         path: 'lectures',
@@ -15,7 +13,6 @@ const getAllLectures = async  (id) => {
         }
     });
 
-    console.log(userWithLectures, 'userWithLectures');
     if (!userWithLectures) {
       throw new Error('no lectures Found')
     }

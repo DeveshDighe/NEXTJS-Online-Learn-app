@@ -6,7 +6,6 @@ import { NextResponse } from "next/server";
 
 // Define the async function to handle the request
 export async function POST(req) {
-  console.log('Request received to create a course');
 
   // Ensure database connection
   try {
@@ -24,7 +23,6 @@ export async function POST(req) {
   // Create course
   try {
     const data = await req.json();
-    console.log('Creating a new course:', data);
     const course = await createCourseData(data);
     return NextResponse.json({ message: 'Course created successfully', success: true, course }, { status: 201 });
   } catch (error) {
