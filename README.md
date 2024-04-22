@@ -1,37 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Online Lecture Scheduling Application
 
-## Getting Started
+## Table of Contents
+- [Primary Tools Used](#primary-tools-used)
+- [Other Tools Used](#other-tools-used)
+- [Key Features](#key-features)
+- [Project Information](#project-information)
 
-First, run the development server:
+## Primary Tools Used
+- Next.js
+- React
+- MongoDB
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Other Tools Used
+- Axios
+- Tailwind CSS
+- Tailwind Components
+- Bcrypt
+- JSON Web Token (JWT)
+- React Hot Toast
+- Context API
+- Nodemon
+- Mongoose
+- dotenv
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features
+- **Authentication**: Users can sign up and log in securely using JSON Web Tokens.
+- **Admin Functionality**: Admins can create courses and schedule lectures for lecturers.
+- **Lecture Scheduling**: Lecturers can view all lectures scheduled for them. Admins cannot schedule the same course lecture within a 5-hour gap, and if a lecturer already has a lecture scheduled on a particular date, the admin cannot schedule another lecture for the same lecturer on that date.
+- **Course Information**: Users can view all courses and their details and visit individual course pages for more information.
+- **Admin Insights**: Admins can see which lectures are assigned to which lecturers.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Project Information
+This project is an online lecture scheduling application designed to streamline the process of scheduling lectures and managing courses. It serves as a platform for educational institutions or organizations to efficiently organize and track their lecture schedules. The application provides intuitive interfaces for both administrators and lecturers, ensuring smooth communication and coordination.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Key functionalities include:
 
-## Learn More
+- **Admin Dashboard**: Administrators have access to a dashboard where they can manage courses, schedule lectures, and view insights about lecture assignments.
+- **Lecturer Portal**: Lecturers can log in to view their scheduled lectures, making it easy to stay updated on their teaching commitments.
+- **Course Management**: Users can browse through available courses, access detailed information about each course, and enroll as necessary.
+- **Conflict Resolution**: The application incorporates logic to prevent scheduling conflicts, ensuring that lectures are scheduled efficiently without overlaps or duplications.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# NEXTJS-Online-Learn-app
