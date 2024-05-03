@@ -1,4 +1,5 @@
 import { getSingleCourseService } from "@/BackendServices/Couser.service";
+import connectDB from "@/Db";
 import Lecture from "@/lib/config/models/lectures.model";
 import User from "@/lib/config/models/user.model";
 import { NextResponse } from "next/server";

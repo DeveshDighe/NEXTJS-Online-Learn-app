@@ -1,5 +1,6 @@
 import { getUserIdFromToken } from "@/BackendServices/Jwt.service";
 import { getAllLectures } from "@/BackendServices/user.servise";
+import connectDB from "@/Db";
 import { NextResponse } from "next/server";
 
 

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getSingleCourseService } from "@/BackendServices/Couser.service";
+import connectDB from "@/Db";
 
 export async function GET(req) {
   await connectDB()
