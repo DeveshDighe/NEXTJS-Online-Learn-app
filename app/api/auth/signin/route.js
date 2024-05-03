@@ -10,7 +10,7 @@ const { generateToken } = require("@/BackendServices/Jwt.service");
 export async function POST(req){
     
   try {
-    connectDB()
+    await connectDB()
       const { password, email } = await req.json();
 
 

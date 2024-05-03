@@ -6,7 +6,7 @@ const { default: connectDB } = require("@/Db");
 
 export async function POST (req){
   try {
-    connectDB()
+   await connectDB()
 
     const jwt = await req.json();
     // console.log(req.body.jwt , 'jwt');

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getSingleCourseService } from "@/BackendServices/Couser.service";
 
 export async function GET(req) {
+  await connectDB()
 
   try {
     // Accessing URL parameter (id) using regular expressions

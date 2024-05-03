@@ -4,7 +4,7 @@ import { NextResponse } from "next/server"
 const { getAllUsers } = require("@/BackendServices/user.servise")
 
 export async function GET(req){
-  connectDB()
+  await connectDB()
   try {
     const allUserData = await getAllUsers()
 

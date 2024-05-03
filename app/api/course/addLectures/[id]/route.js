@@ -6,6 +6,7 @@ import { NextResponse } from "next/server";
 
 
 export async function POST (req){
+  await connectDB()
   try {
     // const id = req.params.id;
     const id = req.url.match(/([^\/]+)\/?$/)[1];

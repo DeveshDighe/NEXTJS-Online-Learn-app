@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 
 
 export async function GET(req) {
+  await connectDB()
   try {
     const token = req.headers.get('authorization').split(' ')[1];
     

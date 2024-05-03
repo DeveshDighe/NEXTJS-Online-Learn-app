@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 
 
 export async function POST(req) {
+    await connectDB()
 
   const userData =await req.json()
   try {
